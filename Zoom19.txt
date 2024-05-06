@@ -1,0 +1,33 @@
+1. php artisan serve --help
+2. php artisan serve --port=3000 (untuk mengubah port)
+3. php artisan make:view error (membuat file baru pada folder view)
+
+Monday 06/05/2024 (Website Perpustakaan)
+DB Diagram : https://dbdiagram.io/d/Latihan-perpustakaan-66383aeb5b24a634d091af66
+
+***LARAVEL MIGRATION
+
+1. membuat database di heidisql sesuaikan dg nama di .env
+2. php artisan migrate:install (untuk membuat tabel migrasi di db)
+3. php artisan make:migration create_penerbit_table
+4. php artisan migrate
+5. php artisan make:migration update_jk_to_user_table (menambahkan tabel baru)
+   php artisan make:migration rename_jk_to_user_table (membuat migrasi up down untuk rename nama kolom)
+6. $table->renameColumn('jk','jenis_kelamin'); (untuk me rename kolom)
+7. php artisan migrate:fresh (membuat tabel ulang (tracking batch migrate) - disarankan pada awal pengembangan)
+8. php artisan migrate:status (cek migrasi yang baru)
+
+***LARAVEL SEEDER
+
+1. php artisan make:seeder ( php artisan make:seeder UsersTableSeeder)
+2. penamaan sesuai dengan tabel migrasi
+3. php artisan db:seed (untuk menjalankan file seeder)
+4. php artisan make:model (modified di file model sesuaikan attribut dengan db)
+5. edit file User seeder dan Database seeder
+6. migrate seedernya, cek di db apakah data sudah masuk
+
+***LARAVEL FAKER
+
+1. edit file factory untuk membuat data dummy
+2. masukan di seeder (User::factory(50)->create();)
+3. php artisan db:seed
