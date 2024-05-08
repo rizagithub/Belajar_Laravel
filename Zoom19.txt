@@ -31,3 +31,13 @@ DB Diagram : https://dbdiagram.io/d/Latihan-perpustakaan-66383aeb5b24a634d091af6
 1. edit file factory untuk membuat data dummy
 2. masukan di seeder (User::factory(50)->create();)
 3. php artisan db:seed
+
+Wednesday 08/05/2024
+1.   $this->call([
+            UsersTableSeeder::class,
+            PenerbitTableSeeder::class,
+        ]);
+
+   jangan lupa tambahkan di Database seeder
+
+2. php artisan migrate:fresh --seed (agar ga ikut ke seed ulang data selain yang mau di seed)
